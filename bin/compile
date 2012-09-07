@@ -35,9 +35,10 @@ cp -r $CACHE_DIR/freetds-$VERSION $BUILD_DIR/freetds
 cd $BUILD_DIR/freetds
 
 echo "-----> Configure FreeTDS"
-./configure --prefix=$BUILD_DIR | indent
+./configure --prefix=$BUILD_DIR --enable-msdblib --with-tdsver=7.1 | indent
 echo "-----> Configure make"
 make | indent
 echo "-----> Configure Install FreeTDS"
 make install | indent
 
+gem install tiny_tds -- --with-freetds-include=$BUILD_DIR
