@@ -41,4 +41,4 @@ make | indent
 echo "-----> Configure Install FreeTDS"
 make install | indent
 
-gem install tiny_tds -- --with-freetds-include=$BUILD_DIR
+sudo gem install tiny_tds -- --with-freetds-include=$BUILD_DIR
